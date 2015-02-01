@@ -1,3 +1,5 @@
+//Feel free to customise the array below, and the export options (lines 28-36)
+
 var artboards = [
     {name:".iconset/icon_512x512",x:0,y:0,width:512},
     {name:".iconset/icon_256x256",x:562,y:0,width:256},
@@ -10,7 +12,7 @@ var name = [doc askForUserInput:"Exported .iconset/icon name:" initialValue:"ico
 
 if (name == "") name = "icon"
 
-var i = 4
+var i = artboards.length-1;
 while (i != -1) {
     var a = [MSArtboardGroup new]
     [doc addLayer:a]
@@ -35,5 +37,3 @@ while (i != -1) {
 
     i--
 }
-
-var error = [[NSTask alloc] init]
