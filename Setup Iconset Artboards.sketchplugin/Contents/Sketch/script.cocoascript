@@ -1,0 +1,44 @@
+var onRun = function(context) {
+    //Feel free to customise the array of artboards (lines 8-12)
+    //and the export options (lines 32-40)
+
+    var doc = context.document
+
+    var artboards = [
+        {name:".iconset/icon_512x512", x:0, y:0, width:512},
+        {name:".iconset/icon_256x256", x:562, y:0, width:256},
+        {name:".iconset/icon_128x128", x:562, y:306, width:128},
+        {name:".iconset/icon_32x32", x:740, y:306, width:32},
+        {name:".iconset/icon_16x16", x:740, y:388, width:16}
+    ]
+
+    var name = doc.askForUserInput_initialValue("Exported .iconset/icon name:", "icon")
+
+    if (name == "") name = "icon"
+
+    var i = artboards.length-1
+    while (i != -1) {
+        var a = MSArtboardGroup.new()
+        doc.addLayer(a)
+
+        var frame = a.frame()
+        frame.setX(artboards[i].x)
+        frame.setY(artboards[i].y)
+        frame.setWidth(artboards[i].width)
+        frame.setHeight(artboards[i].width)
+
+        a.setName(name+artboards[i].name)
+
+        var oX = a.exportOptions().addExportSize()
+        oX.setFormat("png")
+        oX.setScale(1)
+        oX.setName("")
+
+        var retina = a.exportOptions().addExportSize()
+        retina.setFormat("png")
+        retina.setScale(2)
+        retina.setName("@2x")
+
+        i--
+    }
+};
