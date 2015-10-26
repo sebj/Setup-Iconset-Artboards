@@ -1,25 +1,27 @@
 {
-  "name" : "Setup Iconset Artboards",
-  "description" : "Creates artboards and export options necessary to export a .iconset",
+  "name": "Setup Iconset Artboards",
+  "description": "Creates artboards and export options necessary to export a .iconset",
   "author": "Seb Jachec",
-  "authorEmail" : "sjachec1@gmail.com",
+  "authorEmail": "hi@sebj.me",
+  "homepage": "https://github.com/sebj/Setup-Iconset-Artboards",
   "version": 1.0,
-  "identifier": "me.sebj.setup-iconset-artboards",
+  "bundleVersion": 1.0,
   "compatibleVersion": 3.3,
-  "commands" : [
+  "identifier": "me.sebj.setup-iconset-artboards",
+  "commands": [
     {
-      "script" : "script.cocoascript",
-      "handler" : "onRun",
-      "shortcut" : "",
-      "name" : "Setup .iconset Artboards",
-      "identifier" : "setup-iconset-artboards"
+      "script": "script.cocoascript",
+      "handler": "onRun",
+      "shortcut": "",
+      "name": "Setup .iconset Artboards",
+      "identifier": "setup-iconset-artboards"
     }
   ],
-  "menu" : {
+  "menu": {
     "isRoot": true,
-    "items" : [
+    "items": [
       "setup-iconset-artboards"
     ],
-    "title" : "Setup .iconset Artboards"
+    "title": "Setup .iconset Artboards"
   }
 }
